@@ -1,0 +1,38 @@
+{
+  "name": "login-form",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "fast": "next dev --turbo"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@iconify/icons-mdi": "^1.2.48",
+    "@iconify/react": "^4.1.1",
+    "@mui/icons-material": "^5.15.17",
+    "@mui/material": "^6.0.0-alpha.6",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@react-google-maps/api": "^2.19.3",
+    "@types/react-input-mask": "^3.0.5",
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "lodash.isempty": "^4.4.0",
+    "next": "14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18",
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.3",
+    "typescript": "^5"
+  }
+}
