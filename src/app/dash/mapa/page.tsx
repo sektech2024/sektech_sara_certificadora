@@ -2,7 +2,7 @@
 
 import React, { Suspense } from 'react';
 
-const MapComponent = React.lazy(() => import('@/components/mapa'));
+const MapComponent = React.lazy(() => import('@/components/mapa/mapa'));
 
 export default function Mapa(){
     return (

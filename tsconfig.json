@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/mapa.jsx", "src/app/dash/mapa/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/mapa/mapa.jsx", "src/app/dash/mapa/page.tsx"],
   "exclude": ["node_modules"]
 }
