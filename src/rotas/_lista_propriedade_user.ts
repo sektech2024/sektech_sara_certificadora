@@ -1,4 +1,5 @@
 import axios from "axios";
+// require('dotenv').config();
 
 type ListPropriedadeUser = {
   idPropriedade: number;
@@ -40,34 +41,27 @@ type GetResponse = {
 //   urlParametros[param[0]] = param[1];
 // }
 
-const api_url = process.env.PROPRIEDADES_USUARIO_API__URL;
-
-console.log(api_url);
-console.log("ENTROU");
+const api_url = "https://apisara.sektech.com.br:8087/Api/_lista_propriedades_usuario_";
 
 export const getPropriedade = async () => {
   try {
     if (!api_url) {
       throw new Error("api não encontrada...");
     }
-    const token = "51034515070B090D0B1F6342250E7C76766A72730C4E4C7E7B627D6065";
     const { data } = await axios.get<GetResponse>(
-      `${api_url}/?TOKENSESSAO=${token}`,
+      `${api_url}/?TOKENSESSAO=5F024515070B090D0B1F6342250E7C76766A72730C4E4C7E7B627D6065`,
       {
         headers: {
           Accept: "application/json",
         },
       }
     );
-    console.log("NÃO ENTROU");
-    console.log(JSON.stringify(data, null, 4));
-    console.log('response status is: ', status)
+
     return data;
+
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return error.message;
     }
   }
 }
-console.log("SAIU");
-;
