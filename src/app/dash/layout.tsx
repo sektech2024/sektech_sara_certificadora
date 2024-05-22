@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 
-const MenuBoard = React.lazy(() => import('@/components/menu'))
+const MenuBoard = React.lazy(() => import('@/components/menu/menu'))
 
 export default function DashboardLayout({
     children,
