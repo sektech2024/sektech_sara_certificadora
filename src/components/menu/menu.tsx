@@ -169,7 +169,7 @@ function MenuBoard() {
               </Button>
               <Button
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                onClick={() => router.push('/dash/propriedade')}
+                onClick={() => router.push('/dash/autorizacao')}
               >
                 Permissões
               </Button>
