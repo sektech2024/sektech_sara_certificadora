@@ -49,7 +49,7 @@ export const getPropriedade = async () => {
       throw new Error("api não encontrada...");
     }
     const { data } = await axios.get<GetResponse>(
-      `${api_url}/?TOKENSESSAO=540D4515070B090D0B1F6342250E7C76766A72730C4E4C7E7B627D6065`,
+      `${api_url}/?TOKENSESSAO=550C4515070B090D0B1F6342250E7C76766A72730C4E4C7E7B627D6065`,
       {
         headers: {
           Accept: "application/json",

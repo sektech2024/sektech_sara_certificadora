@@ -7,8 +7,7 @@ import {
 } from "@react-google-maps/api";
 import "./map.css";
 
-//import { getPropriedade } from "@/rotas/_lista_propriedade_user";
-import { getDadosPropriedade } from "@/rotas/lista_propriedade_user";
+//import { getDadosPropriedade } from "@/rotas/lista_propriedade_user";
 import { getPropriedade } from "@/rotas/_lista_propriedade_user";
 
 const containerStyle = {
@@ -58,6 +57,10 @@ function Map() {
     setMap(null);
   }, []);
 
+  const handleMarkerClick = (marker) => {
+    setSelectedMarker(marker);
+  };
+
   return isLoaded ? (
     <div className="map">
       <h2 className="map-h2">Lista de Propriedades</h2>
@@ -70,28 +73,31 @@ function Map() {
           disableDefaultUI: true,
         }}
       >
-        {dados?.Lista?.map((propItem) => (
+        {/* Render custom markers */}
+        {dados?.Lista?.map((marker) => (
           <Marker
-            key={propItem.idPropriedade} // Use o ID da propriedade como chave
-            position={{ lat: propItem.geoLatitude, lng: propItem.geoLongitude }}
-            onClick={() => {
-              setSelectedMarker(propItem.idPropriedade);
-            }}
+            key={marker.idPropriedade}
+            position={{ lat: marker.geoLatitude, lng: marker.geoLongitude }}
+            onClick={() => handleMarkerClick(marker)}
           >
-            {selectedMarker === propItem.idPropriedade && (
+            {/* Render InfoWindow for each marker */}
+            {selectedMarker === marker && (
               <InfoWindow
                 position={{
-                  lat: propItem.geoLatitude,
-                  lng: propItem.geoLongitude,
+                  lat: marker.geoLatitude,
+                  lng: marker.geoLongitude,
                 }}
-                onCloseClick={() => {
-                  setSelectedMarker(propItem.idPropriedade);
-                }}
+                onCloseClick={() => setSelectedMarker(null)}
               >
                 <div>
-                  <h1>{propItem.dgNome}</h1>
-                  <p>Produtor: {propItem.ehProdutor}</p>
-                  <p>UF: {propItem.endUf}</p>
+                  <h1>Informações da Propriedade</h1>
+                  <p>Latitude: {marker.geoLatitude}</p>
+                  <p>Longitude: {marker.geoLongitude}</p>
+                  <p>Nome: {marker.dgNome}</p>
+                  <p>Tipo Propriedade: {marker.dgTipopropriedade}</p>
+                  <p>UF: {marker.endUf}</p>
+                  <p>Municipio: {marker.endMunicipio}</p>
+                  <p></p>
                 </div>
               </InfoWindow>
             )}
