@@ -97,7 +97,6 @@ function Map() {
                   <p>Tipo Propriedade: {marker.dgTipopropriedade}</p>
                   <p>UF: {marker.endUf}</p>
                   <p>Municipio: {marker.endMunicipio}</p>
-                  <p></p>
                 </div>
               </InfoWindow>
             )}
