@@ -11,6 +11,7 @@ import {
   Button,
   Grid,
 } from "@mui/material";
+import SaveIcon from '@mui/icons-material/Save';
 
 const TabCertificadora = () => {
   const menusAtivos = ["lista propriedade", "usuário"];
@@ -44,21 +45,21 @@ const TabCertificadora = () => {
   };
 
   return (
-    <Card sx={{ marginBottom: 2, width: "100%"}}>
+    <Card sx={{ marginBottom: 2, width: "100%", minWidth: 1000 }}>
       <CardContent>
         <div>
-          <Typography variant="h4" gutterBottom>
+          <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
             Gerenciamento de Menus
           </Typography>
           <Grid container spacing={2}>
             <Grid item md={6}>
-              <Card>
+              <Card sx={{ bgcolor: '#699934' }}>
                 <CardContent>
-                  <Typography variant="h5">Menus Ativos</Typography>
-                  <List>
+                  <Typography variant="h5" sx={{ color: 'white' }}>Menus Ativos</Typography>
+                  <List sx={{ color: 'white' }}>
                     {activeMenus.ativos.map((menu) => (
                       <ListItem key={menu}>
-                        <ListItemText primary={menu} />
+                        <ListItemText primary={menu}/>
                         <Button
                           size="large"
                           onClick={() =>
@@ -74,10 +75,10 @@ const TabCertificadora = () => {
               </Card>
             </Grid>
             <Grid item md={6}>
-              <Card>
+              <Card sx={{ bgcolor: '#be2929' }}>
                 <CardContent>
-                  <Typography variant="h5">Menus Inativos</Typography>
-                  <List>
+                  <Typography variant="h5" sx={{ color: 'white' }}>Menus Inativos</Typography>
+                  <List sx={{ color: 'white' }}>
                     {activeMenus.inativos.map((menu) => (
                       <ListItem key={menu}>
                         <ListItemText primary={menu} />
@@ -97,10 +98,12 @@ const TabCertificadora = () => {
             </Grid>
           </Grid>
           <Button
-            variant="contained"
-            color="primary"
+            variant="outlined"
+            color="success"
             size="large"
             onClick={handleSalvar}
+            endIcon={<SaveIcon />}
+            sx={{ marginTop: 5, fontWeight: 'bold'  }}
           >
             Salvar
           </Button>
