@@ -8,11 +8,11 @@ export default function DashboardLayout({
     children: React.ReactNode
   }) {
     return (
-      <section>
+      <section suppressHydrationWarning={true}>
         <Suspense fallback={<div>Loading...</div>}>
           <MenuBoard></MenuBoard>
-          {children}
         </Suspense>
+          {children}
       </section>
     )
   }

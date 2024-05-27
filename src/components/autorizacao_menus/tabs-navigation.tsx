@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+import React from "react";
+import { Card, CardContent } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
@@ -69,7 +70,7 @@ export default function TabsPerfis() {
                 value={value}
                 onChange={handleChange}
                 aria-label="perfis"
-                sx={{ border: 1, marginLeft: 15 }}
+                sx={{ border: 1, marginLeft: "50%" }}
               >
                 <Tab
                   label="Certificadora"
@@ -97,14 +98,10 @@ export default function TabsPerfis() {
               }}
             >
               <TabPanel value={value} index={0}>
-                <Suspense fallback={<div>Carregando...</div>}>
-                  <TabCertificadora />
-                </Suspense>
+                  <TabCertificadora/>
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Suspense fallback={<div>Carregando...</div>}>
                   <h1>Produtor</h1>
-                </Suspense>
               </TabPanel>
               <TabPanel value={value} index={2}>
                 Usuário Certificadora
