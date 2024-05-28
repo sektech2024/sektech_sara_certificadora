@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import {
@@ -11,7 +11,7 @@ import {
   Button,
   Grid,
 } from "@mui/material";
-import SaveIcon from '@mui/icons-material/Save';
+import SaveIcon from "@mui/icons-material/Save";
 
 const TabCertificadora = () => {
   const menusAtivos = ["lista propriedade", "usuário"];
@@ -48,20 +48,27 @@ const TabCertificadora = () => {
     <Card sx={{ marginBottom: 2, width: "100%", minWidth: 1000 }}>
       <CardContent>
         <div>
-          <Typography variant="h4" gutterBottom sx={{ textAlign: 'center' }}>
+          <Typography variant="h4" gutterBottom sx={{ textAlign: "center" }}>
             Gerenciamento de Menus
           </Typography>
           <Grid container spacing={2}>
             <Grid item md={6}>
-              <Card sx={{ bgcolor: '#699934' }}>
+              <Card sx={{ bgcolor: "#699934" }}>
                 <CardContent>
-                  <Typography variant="h5" sx={{ color: 'white' }}>Menus Ativos</Typography>
-                  <List sx={{ color: 'white' }}>
+                  <Typography variant="h5" sx={{ color: "white" }}>
+                    Menus Ativos
+                  </Typography>
+                  <List sx={{ color: "white" }}>
                     {activeMenus.ativos.map((menu) => (
                       <ListItem key={menu}>
-                        <ListItemText primary={menu}/>
+                        <ListItemText
+                          primary={menu}
+                          primaryTypographyProps={{
+                            fontSize: 20,
+                          }}
+                        />
                         <Button
-                          size="large"
+                          sx={{fontSize: 22}}
                           onClick={() =>
                             transferirMenu(menu, "ativos", "inativos")
                           }
@@ -75,15 +82,22 @@ const TabCertificadora = () => {
               </Card>
             </Grid>
             <Grid item md={6}>
-              <Card sx={{ bgcolor: '#be2929' }}>
+              <Card sx={{ bgcolor: "#be2929" }}>
                 <CardContent>
-                  <Typography variant="h5" sx={{ color: 'white' }}>Menus Inativos</Typography>
-                  <List sx={{ color: 'white' }}>
+                  <Typography variant="h5" sx={{ color: "white" }}>
+                    Menus Inativos
+                  </Typography>
+                  <List sx={{ color: "white" }}>
                     {activeMenus.inativos.map((menu) => (
                       <ListItem key={menu}>
-                        <ListItemText primary={menu} />
+                        <ListItemText
+                          primary={menu}
+                          primaryTypographyProps={{
+                            fontSize: 20,
+                          }}
+                        />
                         <Button
-                          size="large"
+                          sx={{fontSize: 22}}
                           onClick={() =>
                             transferirMenu(menu, "inativos", "ativos")
                           }
@@ -103,7 +117,7 @@ const TabCertificadora = () => {
             size="large"
             onClick={handleSalvar}
             endIcon={<SaveIcon />}
-            sx={{ marginTop: 5, fontWeight: 'bold'  }}
+            sx={{ marginTop: 5, fontWeight: "bold" }}
           >
             Salvar
           </Button>

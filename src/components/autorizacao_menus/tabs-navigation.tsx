@@ -1,15 +1,29 @@
 import React from "react";
-import { Card, CardContent } from "@mui/material";
+import { Card, CardContent, Divider } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+import { styled } from "@mui/material/styles";
+// import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
+// import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 
 const TabCertificadora = React.lazy(
   () => import("@/components/autorizacao_menus/tab-certificadora")
 );
+
+const style = {
+  py: 0,
+  width: "50%",
+  borderRadius: 2,
+  border: "1px solid",
+  borderColor: "divider",
+  backgroundColor: "background.paper",
+  marginLeft: "40%",
+  marginTop: 4,
+  boxShadow: 1,
+};
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -70,19 +84,20 @@ export default function TabsPerfis() {
                 value={value}
                 onChange={handleChange}
                 aria-label="perfis"
-                sx={{ border: 1, marginLeft: "50%" }}
+                sx={style}
               >
-                <Tab
-                  label="Certificadora"
-                  icon={<WorkspacePremiumOutlinedIcon />}
-                  iconPosition="start"
-                  {...a11yProps(0)}
-                />
+                <Tab label="Certificadora" {...a11yProps(0)} />
+                <Divider variant="middle"/>
                 <Tab label="Produtor" {...a11yProps(1)} />
+                <Divider variant="middle"/>
                 <Tab label="Item Three" {...a11yProps(2)} />
+                <Divider variant="middle"/>
                 <Tab label="Item Four" {...a11yProps(3)} />
+                <Divider variant="middle"/>
                 <Tab label="Item Five" {...a11yProps(4)} />
+                <Divider variant="middle"/>
                 <Tab label="Item Six" {...a11yProps(5)} />
+                <Divider variant="middle"/>
                 <Tab label="Item Seven" {...a11yProps(6)} />
               </Tabs>
             </Box>
@@ -98,10 +113,10 @@ export default function TabsPerfis() {
               }}
             >
               <TabPanel value={value} index={0}>
-                  <TabCertificadora/>
+                <TabCertificadora />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                  <h1>Produtor</h1>
+                <h1>Produtor</h1>
               </TabPanel>
               <TabPanel value={value} index={2}>
                 Usuário Certificadora
